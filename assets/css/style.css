@@ -16,6 +16,10 @@ header {
 	color: white;
 }
 
+input {
+	outline: none;
+}
+
 #charSelectScreen {
 	width: 508px;
 	height: 532px;
