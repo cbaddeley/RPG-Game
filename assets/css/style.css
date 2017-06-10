@@ -1,0 +1,85 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url("../images/bodyBackground.jpg");
+	font-family: 'Kanit', sans-serif;
+}
+
+header {
+	background-image: url("../images/headerBackground.png");
+	height: 50px;
+	font-size: 36px;
+	text-align: center;
+	padding: 7px 0;
+	color: white;
+}
+
+#charSelectScreen {
+	width: 508px;
+	height: 532px;
+	position: relative;
+	margin: 54px auto;
+	background-image: url("../images/charSelectBackground.jpg");
+	padding: 10px;
+	text-align: center;
+	color: white;
+	font-size: 24px;
+	border: 4px solid black;
+}
+
+#charSelectScreen input {
+	width: 200px;
+	height: 200px;
+	float: left;
+	margin: 20px;
+}
+
+#charSelectScreen input:hover {
+	border: 2px solid red;
+}
+
+.container {
+	width: 960px;
+	height: 640px;
+	border: 1px solid black;
+	margin: 25px auto;
+	background-image: url("../images/containerBackground.png");
+	margin-bottom: 0;
+	position: relative;
+}
+
+#opponentArea {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 150px;
+}
+
+#opponentArea input {
+	width: 150px;
+	height: 150px;
+}
+
+#defenderArea {
+	position: absolute;
+	bottom: 150px;
+	right: 240px;
+}
+
+#defenderArea input {
+	width: 150px;
+	height: 150px;
+}
+
+#attackerArea {
+	position: absolute;
+	left: 240px;
+	bottom: 150px;
+}
+
+#attackerArea input {
+	width: 150px;
+	height: 150px;
+}

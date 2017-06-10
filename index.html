@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Final Fantasy RPG - Bootcamp Homework</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+<header>Final Fantasy RPG - Bootcamp Homework</header>
+
+<div class="container">
+
+<div id="charSelectScreen">
+<audio id="hover" src="assets/sounds/mouseHover.mp3"></audio>
+	<h2>Select Your Character</h2>
+	<input type="image" id="black" arrRef=0 src="assets/images/blackMageLeft.png">
+	<input type="image" id="knight" arrRef=1 src="assets/images/knightLeft.png">
+	<input type="image" id="blue" arrRef=2 src="assets/images/blueMageLeft.png">
+	<input type="image" id="dragoon" arrRef=3 src="assets/images/dragoonLeft.png">
+	
+
+</div>
+
+<div id="attackerArea"></div>
+
+<div id="defenderArea"></div>
+
+<div id="opponentArea"></div>
+
+<div id="statsArea"></div>
+
+<button onclick="attack()">Attack</button>
+
+<div id="attackerHealth"></div>
+<div id="defenderHealth"></div>
+
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/javascript/game.js" ></script>
+
+</body>
+</html>
