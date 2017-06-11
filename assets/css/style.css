@@ -164,3 +164,36 @@ button {
 	background-color: green;
 	height: 5px;
 }
+
+#healthBarDef {
+	display: none;
+	height: 5px;
+	width: 100px;
+	background-color: red;
+	position: absolute;
+	right: 100px;
+	top: 65px;
+}
+#defHealthPerct {
+	width: 100%;
+	background-color: green;
+	height: 5px;
+}
+
+#instructions {
+	position: relative;
+	margin: 10px 0;
+	padding: 10px 30px;
+	width: auto;
+	font-size: 18px;
+	font-family: 'Kanit', sans-serif;
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+	line-height: 20px;
+}
+
+ul {
+	/*display: inline-block;
+	list-style-position: inside;*/
+	list-style-image: url('../images/chocobo.png');
+}

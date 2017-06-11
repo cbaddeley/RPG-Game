@@ -64,6 +64,7 @@ function charSelect(selectedCharacter)  {
 		$(selectedCharacter).detach().prependTo($("#defenderArea"));
 		$("#defenderName").text(characters[$(selectedCharacter).attr("arrRef")].name);
 		$("#defenderHealth").text("HP: " + characters[$(selectedCharacter).attr('arrRef')].health + " / " + characters[$(selectedCharacter).attr('arrRef')].health);
+		$("#healthBarDef").css("display","block");
 		oSelect = true;
 		defHealth = characters[$("#defenderArea > :input").attr("arrRef")].health;
 	}
@@ -89,6 +90,10 @@ function attack() {
 	if (defHealth > 0) {
 		defHealth = defHealth - addAttack;
 		addAttack = addAttack + characters[$("#attackerArea > :input").attr("arrRef")].attack;
+		$("#defenderHealth").text("HP: " + defHealth + " / " + characters[$("#defenderArea > :input").attr("arrRef")].health);
+		$("#defHealthPerct").width(function(n, c){
+        return (defHealth / characters[$("#defenderArea > :input").attr("arrRef")].health) * 100;
+        });
 		console.log(defHealth);
 		console.log(addAttack);
 	}
@@ -103,9 +108,11 @@ function attack() {
 		oSelect = false;
 		$("#defenderName").text("");
 		$("#defenderHealth").text("");
+		$("#healthBarDef").css("display","none");
+		$("#defHealthPerct").width(function(n, c){
+        return (100 / 100) * 100;
+        });
 		$("#defenderArea > :input").remove();
-		
-
 	}
 }
 
