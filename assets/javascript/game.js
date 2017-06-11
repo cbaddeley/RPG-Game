@@ -81,14 +81,14 @@ function attack() {
 		addAttack = addAttack + characters[$("#attackerArea > :input").attr("arrRef")].attack;
 		$("#defenderHealth").text("HP: " + defHealth + " / " + characters[$("#defenderArea > :input").attr("arrRef")].health);
 		$("#defHealthPerct").width(function(n, c){
-        	return (defHealth / characters[$("#defenderArea > :input").attr("arrRef")].health) * 100;
+        	return (defHealth / characters[$("#defenderArea > :input").attr("arrRef")].health) * 120;
         });
 	}
 	if (defHealth > 0) {
 		attHealth = attHealth - characters[$("#defenderArea > :input").attr("arrRef")].counter;
 		$("#attackerHealth").text("HP: " + attHealth + " / " + characters[$("#attackerArea > :input").attr("arrRef")].health);
 		$("#attHealthPerct").width(function(n, c){
-        	return (attHealth / characters[$("#attackerArea > :input").attr("arrRef")].health) * 100;
+        	return (attHealth / characters[$("#attackerArea > :input").attr("arrRef")].health) * 120;
         });
 	} 
 	if (defHealth <= 0 && oSelect) {
@@ -98,7 +98,7 @@ function attack() {
 		$("#healthBarDef").css("display","none");
 		wins++;
 		$("#defHealthPerct").width(function(n, c){
-        	return (100 / 100) * 100;
+        	return (100 / 100) * 120;
         });
 		$("#defenderArea > :input").attr("src", characters[$("#defenderArea > :input").attr("arrRef")].imgDeadLeft);
 	}
