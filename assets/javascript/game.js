@@ -1,47 +1,20 @@
-var blackMage = {
-		attack : 16,
-		health : 240,
-		counter : 30,
-		imgLeft : "assets/images/blackMageLeft.png",
-		imgRight: "assets/images/blackMageRight.png",
-		imgDeadLeft : "assets/images/blackMageDeadLeft.png",
-		imgDeadRight : "assets/images/blackMageDeadRight.png",
-		selectDiv : "#black",
-		name: "Black Mage"
-	};
-var knight = {
-		attack : 28,
-		health : 200,
-		counter : 20,
-		imgLeft : "assets/images/knightLeft.png",
-		imgRight: "assets/images/knightRight.png",
-		imgDeadLeft : "assets/images/knightDeadLeft.png",
-		imgDeadRight : "assets/images/knightDeadRight.png",
-		selectDiv : "#knight",
-		name: "Knight"
-	};
-var blueMage = {
-		attack : 16,
-		health : 260,
-		counter : 50,
-		imgLeft : "assets/images/blueMageLeft.png",
-		imgRight: "assets/images/blueMageRight.png",
-		imgDeadLeft : "assets/images/blueMageDeadLeft.png",
-		imgDeadRight : "assets/images/blueMageDeadRight.png",
-		selectDiv : "#blue",
-		name: "Blue Mage"
-	};
-var dragoon = {
-		attack : 16,
-		health : 300,
-		counter : 45,
-		imgLeft : "assets/images/dragoonLeft.png",
-		imgRight: "assets/images/dragoonRight.png",
-		imgDeadLeft : "assets/images/dragoonDeadLeft.png",
-		imgDeadRight : "assets/images/dragoonDeadRight.png",
-		selectDiv : "#dragoon",
-		name: "Dragoon"
-	};
+function characterCreation(attack, health, counter, imgLeft, imgRight, imgDeadLeft, imgDeadRight, selectDiv, name) {
+  this.attack = attack;
+  this.health = health;
+  this.counter = counter;
+  this.imgLeft = imgLeft;
+  this.imgRight = imgRight;
+  this.imgDeadLeft = imgDeadLeft;
+  this.imgDeadRight = imgDeadRight;
+  this.selectDiv = selectDiv;
+  this.name = name;
+}
+
+var blackMage = new characterCreation(16, 240, 30, "assets/images/blackMageLeft.png", "assets/images/blackMageRight.png", "assets/images/blackMageDeadLeft.png", "assets/images/blackMageDeadRight.png", "#black", "Black Mage");
+var knight = new characterCreation(28, 200, 20, "assets/images/knightLeft.png", "assets/images/knightRight.png", "assets/images/knightDeadLeft.png", "assets/images/knightDeadRight.png", "#knight", "Knight");
+var blueMage = new characterCreation(10, 260, 50, "assets/images/blueMageLeft.png", "assets/images/blueMageRight.png", "assets/images/blueMageDeadLeft.png", "assets/images/blueMageDeadRight.png", "#blue", "Blue Mage");
+var dragoon = new characterCreation(15, 300, 45, "assets/images/dragoonLeft.png", "assets/images/dragoonRight.png", "assets/images/dragoonDeadLeft.png", "assets/images/dragoonDeadRight.png", "#dragoon", "Dragoon");
+
 var characters = [blackMage, knight, blueMage, dragoon];
 var characterSelect = false;
 var oSelect = false;
