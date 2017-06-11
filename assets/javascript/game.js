@@ -29,7 +29,7 @@ var music = $("#musicSound")[0];
 var attackSound = $("#attackSound")[0];
 var wins = 0;
 	
-function charSelect(selectedCharacter)  {
+function charSelect(selectedCharacter) {
 	
 	if (!characterSelect) {
 		$(".loadUp").css("display","block");
@@ -40,9 +40,7 @@ function charSelect(selectedCharacter)  {
 		$("#charSelectScreen > :input").detach().prependTo($("#opponentArea"));
 		characterSelect = true;
 		$("#charSelectScreen").hide();
-		audio = null;
-	}
-		
+	}	
 	if (oSelect == false && $(selectedCharacter).parent().is("#opponentArea")) {
 		$("#defenderArea > :input").remove();
 		$(selectedCharacter).detach().prependTo($("#defenderArea"));
@@ -51,15 +49,17 @@ function charSelect(selectedCharacter)  {
 		$("#healthBarDef").css("display","block");
 		oSelect = true;
 		defHealth = characters[$("#defenderArea > :input").attr("arrRef")].health;
-	}
-	
-}
+	}	
+};
 
-// function selectOpponent() {
-// 	$(":input").click(function() {
-		
-// 	});
-// }
+function endAnimations() {
+	$("#instructions").animate({ opacity: "0" });
+	$("#attackButton").css("display", "none");
+	$("#statsArea").animate({ opacity: "0" });
+	$("#defenderArea").animate({ opacity: "0" });
+	$("#playAgain").css("display", "block");
+	music.pause();
+};
 
 function attack() {
 	if (initial == false) {
@@ -73,14 +73,14 @@ function attack() {
 		addAttack = addAttack + characters[$("#attackerArea > :input").attr("arrRef")].attack;
 		$("#defenderHealth").text("HP: " + defHealth + " / " + characters[$("#defenderArea > :input").attr("arrRef")].health);
 		$("#defHealthPerct").width(function(n, c){
-        return (defHealth / characters[$("#defenderArea > :input").attr("arrRef")].health) * 100;
+        	return (defHealth / characters[$("#defenderArea > :input").attr("arrRef")].health) * 100;
         });
 	}
 	if (defHealth > 0) {
 		attHealth = attHealth - characters[$("#defenderArea > :input").attr("arrRef")].counter;
 		$("#attackerHealth").text("HP: " + attHealth + " / " + characters[$("#attackerArea > :input").attr("arrRef")].health);
 		$("#attHealthPerct").width(function(n, c){
-        return (attHealth / characters[$("#attackerArea > :input").attr("arrRef")].health) * 100;
+        	return (attHealth / characters[$("#attackerArea > :input").attr("arrRef")].health) * 100;
         });
 	} 
 	if (defHealth <= 0 && oSelect) {
@@ -90,48 +90,39 @@ function attack() {
 		$("#healthBarDef").css("display","none");
 		wins++;
 		$("#defHealthPerct").width(function(n, c){
-        return (100 / 100) * 100;
+        	return (100 / 100) * 100;
         });
 		$("#defenderArea > :input").attr("src", characters[$("#defenderArea > :input").attr("arrRef")].imgDeadLeft);
-		}
+	}
 	if (attHealth < 1) {
 		$("#attackerArea > :input").attr("src", characters[$("#attackerArea > :input").attr("arrRef")].imgDeadRight);
 		$("#attackerArea > :input").animate({ height: "400px", width: "400px"});
-		$("#instructions").animate({ opacity: "0" });
-		$("#attackButton").css("display", "none");
-		$("#statsArea").animate({ opacity: "0" });
-		$("#defenderArea").animate({ opacity: "0" });
 		$("#opponentArea").animate({ opacity: "0" });
+		endAnimations();
 		$("#gameOver").css("display", "block");
-		$("#playAgain").css("display", "block");
 		$("#gameOver").animate({ left: "+=1100px" }, "slow");
-		music.pause();
 		gameOverSound.play();
 	}
 	if (wins == 3) {
 		$("#attackerArea > :input").animate({ height: "400px", width: "400px"});
-		$("#instructions").animate({ opacity: "0" });
-		$(":button").css("display", "none");
-		$("#defenderArea").animate({ opacity: "0" });
-		$("#statsArea").animate({ opacity: "0" });
+		endAnimations();
 		$("#victory").css("display", "block");
 		$("#victory").animate({ left: "+=1240px" }, "slow");
-		$("#playAgain").css("display", "block");
-		music.pause();
 		victorySound.play();
 	}
-}
+};
 
 for (var i = 0; i < characters.length; i++) {
 	$(characters[i].selectDiv).click(function() {
 		charSelect(this);
-})}
+	})
+};
 
-	$("#charSelectScreen > :input").mouseenter(function() {
- 		if (!characterSelect) {
- 		audio.play();
- 		}
-	});
+$("#charSelectScreen > :input").mouseenter(function() {
+	if (!characterSelect) {
+		audio.play();
+ 	}
+});
 
 $(document).ready(function() {
     music.play();
@@ -140,4 +131,3 @@ $(document).ready(function() {
 $('#playAgain').click(function() {
     location.reload();
 });
-
