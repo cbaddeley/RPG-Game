@@ -87,3 +87,49 @@ input {
 	width: 150px;
 	height: 150px;
 }
+
+button {
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	font-family: 'Kanit', sans-serif;
+	width: 100px;
+	background: white;
+	outline: none;
+}
+
+#statsArea {
+	position: absolute;
+	bottom: 0;
+	left: 100px;
+	background-image: url("../images/statsAreaBackground.jpg");
+	width: 696px;
+	height: 140px;
+}
+
+.loadUp {
+	display: none;
+}
+.fighterName {
+	height: 40px;
+	position: relative;
+	border: 1px solid black;
+}
+
+#attackerName {
+	position: absolute;
+	left: 170px;
+	top: 10px;
+	font-size: 24px;
+	font-family: 'Kanit', sans-serif;
+	color: white;
+}
+
+#defenderName {
+	position: absolute;
+	right: 100px;
+	top: 10px;
+	font-size: 24px;
+	font-family: 'Kanit', sans-serif;
+	color: white;
+}

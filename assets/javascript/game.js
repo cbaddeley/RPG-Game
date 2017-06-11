@@ -4,7 +4,8 @@ var blackMage = {
 		counter : 5,
 		imgLeft : "assets/images/blackMageLeft.png",
 		imgRight: "assets/images/blackMageRight.png",
-		selectDiv : "#black"
+		selectDiv : "#black",
+		name: "Black Mage"
 	};
 var knight = {
 		attack : 5,
@@ -12,7 +13,8 @@ var knight = {
 		counter : 5,
 		imgLeft : "assets/images/knightLeft.png",
 		imgRight: "assets/images/knightRight.png",
-		selectDiv : "#knight"
+		selectDiv : "#knight",
+		name: "Knight"
 	};
 var blueMage = {
 		attack : 5,
@@ -20,7 +22,8 @@ var blueMage = {
 		counter : 5,
 		imgLeft : "assets/images/blueMageLeft.png",
 		imgRight: "assets/images/blueMageRight.png",
-		selectDiv : "#blue"
+		selectDiv : "#blue",
+		name: "Blue Mage"
 	};
 var dragoon = {
 		attack : 5,
@@ -28,7 +31,8 @@ var dragoon = {
 		counter : 5,
 		imgLeft : "assets/images/dragoonLeft.png",
 		imgRight: "assets/images/dragoonRight.png",
-		selectDiv : "#dragoon"
+		selectDiv : "#dragoon",
+		name: "Dragoon"
 	};
 var characters = [blackMage, knight, blueMage, dragoon];
 var characterSelect = false;
@@ -45,7 +49,9 @@ function charSelect(selectedCharacter)  {
 		console.log(selectedCharacter);
 		console.log(selectedCharacter.imgRight);
 		console.log($(selectedCharacter).attr("arrRef"));
+		$(".loadUp").css("display","block");
 		$(selectedCharacter).attr("src", characters[$(selectedCharacter).attr("arrRef")].imgRight);
+		$("#attackerName").text(characters[$(selectedCharacter).attr("arrRef")].name);
 		$(selectedCharacter).detach().prependTo($("#attackerArea"));
 		$("#charSelectScreen > :input").detach().prependTo($("#opponentArea"));
 		characterSelect = true;
@@ -55,6 +61,7 @@ function charSelect(selectedCharacter)  {
 		
 	if (oSelect == false && $(selectedCharacter).parent().is("#opponentArea")) {
 		$(selectedCharacter).detach().prependTo($("#defenderArea"));
+		$("#defenderName").text(characters[$(selectedCharacter).attr("arrRef")].name);
 		oSelect = true;
 		defHealth = characters[$("#defenderArea > :input").attr("arrRef")].health;
 	}
@@ -88,6 +95,7 @@ function attack() {
 		console.log(attHealth);
 	}	else {
 		oSelect = false;
+		$("#defenderName").text("");
 		$("#defenderArea > :input").remove();
 		
 
