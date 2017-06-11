@@ -90,7 +90,7 @@ input {
 
 button {
 	position: absolute;
-	bottom: 50px;
+	bottom: 25px;
 	left: 20px;
 	font-family: 'Kanit', sans-serif;
 	width: 120px;
@@ -106,7 +106,7 @@ button {
 	left: 100px;
 	background-image: url("../images/statsAreaBackground.jpg");
 	width: 696px;
-	height: 140px;
+	height: 90px;
 }
 
 .loadUp {
@@ -129,7 +129,7 @@ button {
 
 #defenderName {
 	position: absolute;
-	right: 100px;
+	left: 490px;
 	top: 10px;
 	font-size: 24px;
 	font-family: 'Kanit', sans-serif;
@@ -147,7 +147,7 @@ button {
 
 #defenderHealth {
 	position: absolute;
-	right: 100px;
+	left: 490px;
 	color: white;
 	font-size: 18px;
 	text-align: left;
@@ -155,7 +155,7 @@ button {
 
 #healthBarAtt {
 	height: 5px;
-	width: 100px;
+	width: 120px;
 	background-color: red;
 	position: absolute;
 	left: 170px;
@@ -170,10 +170,10 @@ button {
 #healthBarDef {
 	display: none;
 	height: 5px;
-	width: 100px;
+	width: 120px;
 	background-color: red;
 	position: absolute;
-	right: 100px;
+	left: 490px;
 	top: 65px;
 }
 #defHealthPerct {
