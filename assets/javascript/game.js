@@ -28,6 +28,7 @@ var gameOverSound = $("#gameOverSound")[0];
 var music = $("#musicSound")[0];
 var attackSound = $("#attackSound")[0];
 var wins = 0;
+var cssCounter = 0;
 	
 function charSelect(selectedCharacter) {
 	
@@ -48,6 +49,13 @@ function charSelect(selectedCharacter) {
 		$("#defenderHealth").text("HP: " + characters[$(selectedCharacter).attr('arrRef')].health + " / " + characters[$(selectedCharacter).attr('arrRef')].health);
 		$("#healthBarDef").css("display","block");
 		oSelect = true;
+		cssCounter++;
+		if (cssCounter == 1) {
+			$("#opponentArea").css("bottom", "75px");
+		};
+		if (cssCounter == 2) {
+			$("#opponentArea").css("bottom", "150px");
+		};
 		defHealth = characters[$("#defenderArea > :input").attr("arrRef")].health;
 	}	
 };
