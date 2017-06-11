@@ -125,11 +125,12 @@ function attack() {
 		$("#attackerArea > :input").attr("src", characters[$("#attackerArea > :input").attr("arrRef")].imgDeadRight);
 		$("#attackerArea > :input").animate({ height: "400px", width: "400px"});
 		$("#instructions").animate({ opacity: "0" });
-		$(":button").css("display", "none");
+		$("#attackButton").css("display", "none");
 		$("#statsArea").animate({ opacity: "0" });
 		$("#defenderArea").animate({ opacity: "0" });
 		$("#opponentArea").animate({ opacity: "0" });
 		$("#gameOver").css("display", "block");
+		$("#playAgain").css("display", "block");
 		$("#gameOver").animate({ left: "+=1100px" }, "slow");
 		music.pause();
 		gameOverSound.play();
@@ -142,6 +143,7 @@ function attack() {
 		$("#statsArea").animate({ opacity: "0" });
 		$("#victory").css("display", "block");
 		$("#victory").animate({ left: "+=1240px" }, "slow");
+		$("#playAgain").css("display", "block");
 		music.pause();
 		victorySound.play();
 	}
@@ -160,5 +162,9 @@ for (var i = 0; i < characters.length; i++) {
 
 $(document).ready(function() {
     music.play();
+});
+
+$('#playAgain').click(function() {
+    location.reload();
 });
 
