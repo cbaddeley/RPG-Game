@@ -90,12 +90,14 @@ input {
 
 button {
 	position: absolute;
-	bottom: 20px;
+	bottom: 50px;
 	left: 20px;
 	font-family: 'Kanit', sans-serif;
-	width: 100px;
-	background: white;
-	outline: none;
+	width: 120px;
+    background: white;
+    outline: none;
+    height: 35px;
+    font-size: 18px;
 }
 
 #statsArea {
@@ -193,7 +195,25 @@ button {
 }
 
 ul {
-	/*display: inline-block;
-	list-style-position: inside;*/
 	list-style-image: url('../images/chocobo.png');
+}
+
+#victory {
+	display: none;
+	font-size: 150px;
+	font-family: 'Kanit', sans-serif;
+	position: absolute;
+	left: -1000px;
+	bottom: 280px;
+	color: white;
+}
+
+#gameOver {
+	display: none;
+	font-size: 150px;
+	font-family: 'Kanit', sans-serif;
+	position: absolute;
+	left: -1000px;
+	bottom: 280px;
+	color: white;
 }

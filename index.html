@@ -11,9 +11,13 @@
 <header>Final Fantasy RPG - Bootcamp Homework</header>
 
 <div class="container">
+<audio id="victorySound" src="assets/sounds/victory.mp3"></audio>
+<audio id="musicSound" src="assets/sounds/music.mp3"></audio>
+<audio id="gameOverSound" src="assets/sounds/gameOver.mp3"></audio>
+<audio id="attackSound" src="assets/sounds/attack.mp3"></audio>
 
 <div id="charSelectScreen">
-<audio id="hover" src="assets/sounds/mouseHover.mp3"></audio>
+	<audio id="hover" src="assets/sounds/mouseHover.mp3"></audio>
 	<h2>Select Your Character</h2>
 	<input type="image" id="black" arrRef=0 src="assets/images/blackMageLeft.png">
 	<input type="image" id="knight" arrRef=1 src="assets/images/knightLeft.png">
@@ -24,35 +28,39 @@
 </div>
 
 <div class="loadUp">
-<div id="instructions">
-<ul>
-	<li>Select an opponent to fight.</li>
-	<li>Press the attack button to attack. Each subsequent attack increases your attack power.</li>
-	<li>If the enemy is still alive, they will initiate a counter attack.</li>
-	<li>After killing an opponent, select a new one. The game ends when you have defeated all three opponents.</li>
-	<li>Note: Each character has different stats. Your goal is to identify and kill the weaker characters while building your attack power.</li>
-</ul>
-</div>
-<div id="attackerArea"></div>
-
-<div id="defenderArea"></div>
-
-<div id="opponentArea"></div>
-
-
-
-<div id="statsArea">
-	<button onclick="attack()">Attack</button>
-	<div class="fighterName">
-		<div id="attackerName"></div>
-		<div id="defenderName"></div>
+	<div id="instructions">
+	<ul>
+		<li>Select an opponent to fight.</li>
+		<li>Press the attack button to attack. Each subsequent attack increases your attack power.</li>
+		<li>If the enemy is still alive, they will initiate a counter attack.</li>
+		<li>After killing an opponent, select a new one. The game ends when you have defeated all three opponents.</li>
+		<li>Note: Each character has different stats. Your goal is to identify and kill the weaker characters while building your attack power.</li>
+	</ul>
 	</div>
-	<div id="attackerHealth"></div>
-	<div id="defenderHealth"></div>
-	<div id="healthBarAtt"><div id="attHealthPerct"></div></div>
-	<div id="healthBarDef"><div id="defHealthPerct"></div></div>
+	<div id="attackerArea"></div>
+
+	<div id="defenderArea"></div>
+
+	<div id="opponentArea"></div>
+
+
+
+	<div id="statsArea">
+		<button onclick="attack()">Attack</button>
+		<div class="fighterName">
+			<div id="attackerName"></div>
+			<div id="defenderName"></div>
+		</div>
+		<div id="attackerHealth"></div>
+		<div id="defenderHealth"></div>
+		<div id="healthBarAtt"><div id="attHealthPerct"></div></div>
+		<div id="healthBarDef"><div id="defHealthPerct"></div></div>
+	</div>
 </div>
-</div>
+
+<div id="victory">Victory</div>
+<div id="gameOver">Game Over</div>
+
 </div>
 
 
